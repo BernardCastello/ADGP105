@@ -14,14 +14,15 @@ private:
 	int cols;
 };
 
-Grid::Grid()  //GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
+//GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
+Grid::Grid()  
 {
 	cols = 4;
 	rows = 4;
 }
 
-
-void Grid::DrawGrid() //DRAW GRID FUNCTION USES A NESTED FOR LOOP TO CREATE THE ROWS AND COLUMNS.
+//DRAW GRID FUNCTION USES A NESTED FOR LOOP TO CREATE THE ROWS AND COLUMNS.
+void Grid::DrawGrid()
 {
 	for (int r = 0; r <= rows; r++)
 	{
