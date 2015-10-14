@@ -76,6 +76,8 @@ void Player::PAttack(Bullet b)
 	b.MoveBullet();
 }
 
+//CHECKS IF THE PLAYER'S POSITION IS EQUAL TO THE GOAL'S POSITION.
+//IF YES THEN THE PLAYER HAS THE GOAL, IF NO THEN THE GAME CONTINUES.
 void Player::HasGoal(Goal g)
 {
 	if (currentPosX == g.goalPosX && currentPosY == g.goalPosY)
