@@ -8,7 +8,7 @@ public:
 	bool playerAlive = true;
 	bool playerMove;
 	bool playerAttack;
-	bool playerHasGold;
+	bool playerHasGoal;
 
 	int currentPosY;
 	int currentPosX;
@@ -16,10 +16,8 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void PAttack(Bullet b);
-
-private:			
-	void Goal();
+	void PAttack(Bullet);			
+	void HasGoal(Goal);
 };
 
 //CONSTRUCTOR SET THE STARTING POSITION EQUAL TO ZERO, HASGOLD TO FALSE, 
@@ -28,9 +26,7 @@ void Player::PSpawn()
 {
 	if (playerAlive)
 	{
-		currentPosX = 0;
-		currentPosY = 0;
-		playerHasGold = false;
+		playerHasGoal = false;
 		playerAttack = false;
 	}
 }
@@ -65,7 +61,7 @@ void Player::Controller(char i)
 
 	case 'k':
 		playerAttack = true;
-		PAttack(Bullet);
+		PAttack(b);
 		break;
 
 	default:
@@ -77,12 +73,20 @@ void Player::Controller(char i)
 
 void Player::PAttack(Bullet b)
 {
-	b.SpawnBullet();
+	b.MoveBullet();
 }
 
-void Player::Goal()
+void Player::HasGoal(Goal g)
 {
+	if (currentPosX == g.goalPosX && currentPosY == g.goalPosY)
+	{
+		playerHasGoal = true;
+	}
 
+	else
+	{
+		playerHasGoal = false;
+	}
 }
 
 //PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,

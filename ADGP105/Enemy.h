@@ -12,8 +12,8 @@ public:
 	int enemyPosy;
 
 	Enemy();
-	void EnemyAttack(Player p);
-	void EnemyDead();
+	void EnemyAttack(Player);
+	void EnemyDead(Bullet);
 };
 
 //ENEMY CONSTRUCTOR SETS THE VALUES FOR THE COORDINATES,
@@ -41,7 +41,17 @@ void Enemy::EnemyAttack(Player p)
 	}
 }
 
-void Enemy::EnemyDead()
+//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
+//IF NO THE ENEMY IS STILL ALIVE.
+void Enemy::EnemyDead(Bullet b)
 {
+	if (b.enemyHit)
+	{
+		enemyAlive = false;
+	}
 
+	else
+	{
+		enemyAlive = true;
+	}
 }

@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Goal.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
