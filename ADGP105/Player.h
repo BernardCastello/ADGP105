@@ -16,10 +16,9 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void PAttack(char);
+	void PAttack(Bullet b);
 
-private:		
-	
+private:			
 	void Goal();
 };
 
@@ -66,7 +65,7 @@ void Player::Controller(char i)
 
 	case 'k':
 		playerAttack = true;
-		PAttack(i);
+		PAttack(Bullet);
 		break;
 
 	default:
@@ -76,37 +75,15 @@ void Player::Controller(char i)
 	}
 }
 
-void Player::PAttack(char i)
+void Player::PAttack(Bullet b)
 {
-	/*switch (i)
-	{
-	case 'w':
-		playerAttack = true;
-		break;
-
-	case 'a':
-		playerAttack = true;
-		break;
-
-	case 's':
-		playerAttack = true;
-		break;
-
-	case 'd':
-		playerAttack = true;
-		break;
-
-	default:
-		playerAttack = false;
-		break;
-	}*/
+	b.SpawnBullet();
 }
 
 void Player::Goal()
 {
 
 }
-
 
 //PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
 //AND SETS THE PLAYERS COORDINATES TO ZERO.

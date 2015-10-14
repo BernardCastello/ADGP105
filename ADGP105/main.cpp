@@ -2,6 +2,7 @@
 #include "Grid.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Bullet.h"
 
 //PROBLEM: CREATE A 4X4 GRID AND MOVE A PLAYER ON IT WHILE AVOIDING, 
 //OR KILLING, THE ENEMY TO REACH THE GOAL.
@@ -37,7 +38,7 @@ int main()
 		char input;
 		cin >> input;
 		p.Controller(input); 
-		p.PAttack(input);
+		p.PAttack();
 		e.EnemyAttack(p);
 
 		if (p.playerMove)
@@ -47,7 +48,7 @@ int main()
 
 		if (p.playerAttack)
 		{
-			cout << "SELECT FIRING DIRECTION:" << endl;
+			p.PAttack();
 		}
 
 		if (e.enemyAttack)

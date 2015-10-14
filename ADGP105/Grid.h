@@ -15,7 +15,7 @@ private:
 };
 
 //GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
-Grid::Grid()  
+Grid::Grid()
 {
 	cols = 4;
 	rows = 4;
