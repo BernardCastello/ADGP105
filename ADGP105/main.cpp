@@ -41,10 +41,12 @@ int main()
 		char input;
 		cin >> input;
 		p.Controller(input); 
-		p.PAttack();
+		p.PAttack(b);
+		p.HasGoal(gl);
 		e.EnemyAttack(p);
 		b.SpawnBullet(p);
 		b.MoveBullet(input);
+
 
 
 		if (p.playerMove)
@@ -54,7 +56,7 @@ int main()
 
 		if (p.playerAttack)
 		{
-			p.PAttack();
+			p.PAttack(b);
 		}
 
 		if (e.enemyAttack)

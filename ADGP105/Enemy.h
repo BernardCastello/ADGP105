@@ -47,11 +47,13 @@ void Enemy::EnemyDead(Bullet b)
 {
 	if (b.enemyHit)
 	{
+		cout << "ENEMY TERMINATED" << endl;
 		enemyAlive = false;
 	}
 
 	else
 	{
+		cout << "TARGET MISSED" << endl;
 		enemyAlive = true;
 	}
 }

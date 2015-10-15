@@ -61,7 +61,6 @@ void Player::Controller(char i)
 
 	case 'k':
 		playerAttack = true;
-		PAttack(b);
 		break;
 
 	default:
@@ -71,16 +70,21 @@ void Player::Controller(char i)
 	}
 }
 
+//CALLS IN THE SPAWNBULLET, AND MOVEBULLET FUNCTIONS IF PLAYERATTACK=TRUE.
 void Player::PAttack(Bullet b)
 {
-	b.MoveBullet();
+	if (playerAttack)
+	{
+		b.SpawnBullet(p);
+		b.MoveBullet(input);
+	}
 }
 
 //CHECKS IF THE PLAYER'S POSITION IS EQUAL TO THE GOAL'S POSITION.
 //IF YES THEN THE PLAYER HAS THE GOAL, IF NO THEN THE GAME CONTINUES.
-void Player::HasGoal(Goal g)
+void Player::HasGoal(Goal gl)
 {
-	if (currentPosX == g.goalPosX && currentPosY == g.goalPosY)
+	if (currentPosX == gl.goalPosX && currentPosY == gl.goalPosY)
 	{
 		playerHasGoal = true;
 	}

@@ -1,13 +1,29 @@
-﻿Build started 10/14/2015 11:55:16 AM.
+﻿Build started 10/15/2015 4:11:41 PM.
      1>Project "C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\ADGP105\ADGP105.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Debug\ADGP105.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Debug\ADGP105.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Debug\ADGP105.lib" /MACHINE:X86 Debug\main.obj
-         ADGP105.vcxproj -> C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Debug\ADGP105.exe
-     1>Done Building Project "C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\ADGP105\ADGP105.vcxproj" (Build target(s)).
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(19): error C2061: syntax error: identifier 'Bullet'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(20): error C2061: syntax error: identifier 'Goal'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(74): error C2065: 'Bullet': undeclared identifier
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(74): error C2146: syntax error: missing ')' before identifier 'b'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(75): error C2143: syntax error: missing ';' before '{'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(75): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(85): error C2065: 'Goal': undeclared identifier
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(85): error C2146: syntax error: missing ')' before identifier 'gl'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(86): error C2143: syntax error: missing ';' before '{'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\player.h(86): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\enemy.h(16): error C2061: syntax error: identifier 'Bullet'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\enemy.h(46): error C2065: 'Bullet': undeclared identifier
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\enemy.h(46): error C2146: syntax error: missing ')' before identifier 'b'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\enemy.h(47): error C2143: syntax error: missing ';' before '{'
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\enemy.h(47): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\main.cpp(44): error C2660: 'Player::PAttack': function does not take 1 arguments
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\main.cpp(45): error C2660: 'Player::HasGoal': function does not take 1 arguments
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\main.cpp(59): error C2660: 'Player::PAttack': function does not take 1 arguments
+     1>c:\users\bernard.castello\documents\visual studio 2015\projects\adgp105\adgp105\main.cpp(81): error C2660: 'Enemy::EnemyDead': function does not take 1 arguments
+     1>Done Building Project "C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\ADGP105\ADGP105.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.67
+Time Elapsed 00:00:00.95
