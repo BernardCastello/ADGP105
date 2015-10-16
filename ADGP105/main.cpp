@@ -41,7 +41,7 @@ int main()
 		char input;
 		cin >> input;
 		p.Controller(input); 
-		p.PAttack(b);
+		p.Attack(b);
 		p.HasGoal(gl);
 		e.EnemyAttack(p);
 		b.SpawnBullet(p);
@@ -56,7 +56,7 @@ int main()
 
 		if (p.playerAttack)
 		{
-			p.PAttack(b);
+			p.Attack(b);
 		}
 
 		if (e.enemyAttack)

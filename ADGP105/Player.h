@@ -16,7 +16,7 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void PAttack(Bullet);			
+	void Attack(Bullet);			
 	void HasGoal(Goal);
 };
 
@@ -71,7 +71,7 @@ void Player::Controller(char i)
 }
 
 //CALLS IN THE SPAWNBULLET, AND MOVEBULLET FUNCTIONS IF PLAYERATTACK=TRUE.
-void Player::PAttack(Bullet b)
+void Player::Attack(Bullet b)
 {
 	if (playerAttack)
 	{

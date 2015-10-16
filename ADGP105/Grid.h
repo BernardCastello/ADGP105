@@ -5,7 +5,7 @@ class Grid
 {	
 public:
 	void DrawGrid();
-	void Boundary();
+	void Boundary(Player);
 	Grid();
 
 private:
@@ -33,7 +33,11 @@ void Grid::DrawGrid()
 	}
 }
 
-void Grid::Boundary()
+//DISPLAYS A MESSAGE WHEN THE PLAYER'S POSITION IS EQUAL TO 4.
+void Grid::Boundary(Player p)
 {
-
+	if (p.currentPosX == 4 || p.currentPosY == 4)
+	{
+		cout << "THERE IS A WALL" << endl;
+	}
 }
