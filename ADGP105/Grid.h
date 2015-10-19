@@ -1,11 +1,11 @@
 //GRID CLASS CONTAINS THE DRAWGRID, BOUNDARY FUNCTIONS, AND CONSTRUCTOR AS PUBLIC VARIABLES,
 //AND THE SIZE ARRAY, ROWS, AND COLUMNS AS PRIVATE VARIABLES
-
+#pragma once
 class Grid
 {	
 public:
 	void DrawGrid();
-	void Boundary(Player);
+	void Boundary();
 	Grid();
 
 private:
@@ -33,11 +33,9 @@ void Grid::DrawGrid()
 	}
 }
 
-//DISPLAYS A MESSAGE WHEN THE PLAYER'S POSITION IS EQUAL TO 4.
-void Grid::Boundary(Player p)
+//DISPLAYS A MESSAGE STOPS THE PLAYER 
+//WHEN THE PLAYER'S POSITION IS EQUAL TO THE BOUNDARY.
+void Grid::Boundary()
 {
-	if (p.currentPosX == 4 || p.currentPosY == 4)
-	{
-		cout << "THERE IS A WALL" << endl;
-	}
+
 }

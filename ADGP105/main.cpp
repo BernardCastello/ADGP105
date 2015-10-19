@@ -12,11 +12,12 @@ using namespace std;
 
 int main()
 {
-	Grid g = Grid(); //CREATES AN INSTANCE OF THE GRID.
 	Player p = Player(); //CREATES AN INSTANCE OF THE PLAYER.
+	Grid g = Grid(); //CREATES AN INSTANCE OF THE GRID.
+	Bullet b = Bullet(); //CREATES AN INSTANCE OF THE BULLET.
 	Enemy e = Enemy(); //CREATES AN INSTANCE OF THE ENEMY.
 	Goal gl = Goal(); //CREATES AN INSTANCE OF THE GOAL.
-	Bullet b = Bullet(); //CREATES AN INSTANCE OF THE BULLET.
+
 
 	g.DrawGrid();  //CALLS IN THE DRAW GRID FUNCTION.
 	p.PSpawn();	   //CALLS IN THE PLAYER SPAWN FUNCTION.
@@ -41,10 +42,10 @@ int main()
 		char input;
 		cin >> input;
 		p.Controller(input); 
-		p.Attack(b);
-		p.HasGoal(gl);
+		p.Attack();
+		p.HasGoal();
 		e.EnemyAttack(p);
-		b.SpawnBullet(p);
+		b.SpawnBullet();
 		b.MoveBullet(input);
 
 
@@ -56,7 +57,7 @@ int main()
 
 		if (p.playerAttack)
 		{
-			p.Attack(b);
+			p.Attack();
 		}
 
 		if (e.enemyAttack)
@@ -78,6 +79,6 @@ int main()
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(p);
-		e.EnemyDead(b);
+		e.EnemyDead();
 	}
 }

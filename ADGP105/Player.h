@@ -1,7 +1,7 @@
 //PLAYER CLASS CONTAINS BOOLEANS FOR MOVE, ALIVE, ATTACK, AND HAS GOLD.
 //INTEGERS FOR THE STARTING POSITION, A PUBLIC CONSTRUCTOR, SPAWN, CONTROLLER, 
 //AND ATTACK FUNCTIONS, AS WELL AS A PRIVATE GOAL FUNCTION.
-
+#pragma once
 class Player
 {
 public:
@@ -16,8 +16,8 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void Attack(Bullet);			
-	void HasGoal(Goal);
+	void Attack();			
+	void HasGoal();
 };
 
 //CONSTRUCTOR SET THE STARTING POSITION EQUAL TO ZERO, HASGOLD TO FALSE, 
@@ -71,20 +71,20 @@ void Player::Controller(char i)
 }
 
 //CALLS IN THE SPAWNBULLET, AND MOVEBULLET FUNCTIONS IF PLAYERATTACK=TRUE.
-void Player::Attack(Bullet b)
+void Player::Attack()
 {
 	if (playerAttack)
 	{
-		b.SpawnBullet(p);
-		b.MoveBullet(input);
+		/*b.SpawnBullet(p);
+		b.MoveBullet(input);*/
 	}
 }
 
 //CHECKS IF THE PLAYER'S POSITION IS EQUAL TO THE GOAL'S POSITION.
 //IF YES THEN THE PLAYER HAS THE GOAL, IF NO THEN THE GAME CONTINUES.
-void Player::HasGoal(Goal gl)
+void Player::HasGoal()
 {
-	if (currentPosX == gl.goalPosX && currentPosY == gl.goalPosY)
+	/*if (currentPosX == goalPosX && currentPosY == goalPosY)
 	{
 		playerHasGoal = true;
 	}
@@ -92,12 +92,11 @@ void Player::HasGoal(Goal gl)
 	else
 	{
 		playerHasGoal = false;
-	}
+	}*/
 }
 
 //PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
 //AND SETS THE PLAYERS COORDINATES TO ZERO.
-
 Player::Player()
 {
 	playerAlive = true;

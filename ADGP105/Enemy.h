@@ -1,7 +1,7 @@
 //ENEMY CLASS CONTAINS BOOLEANS FOR ALIVE AND ATTACK,
 //INTEGERS FOR THE ENEMY'S POSITION, THE CONSTRUCTOR,
 //AND THE ATTACK AND DEAD FUNCTIONS.
-
+#pragma once
 class Enemy
 {
 public:
@@ -13,7 +13,7 @@ public:
 
 	Enemy();
 	void EnemyAttack(Player);
-	void EnemyDead(Bullet);
+	void EnemyDead();
 };
 
 //ENEMY CONSTRUCTOR SETS THE VALUES FOR THE COORDINATES,
@@ -24,7 +24,6 @@ Enemy::Enemy()
 	enemyPosy = 3;
 	enemyAlive = true;
 }
-
 
 //CHECKS IF THE PLAYERS POSITION IS EQUAL TO THE ENEMY'S POSITION,
 //IF YES IT KILLS THE PLAYER, IF NOT IT CHECKS AGAIN.
@@ -43,9 +42,9 @@ void Enemy::EnemyAttack(Player p)
 
 //CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
 //IF NO THE ENEMY IS STILL ALIVE.
-void Enemy::EnemyDead(Bullet b)
+void Enemy::EnemyDead()
 {
-	if (b.enemyHit)
+	if (enemyHit)
 	{
 		cout << "ENEMY TERMINATED" << endl;
 		enemyAlive = false;
