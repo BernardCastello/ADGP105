@@ -19,7 +19,7 @@ private:
 Bullet::Bullet() {}
 
 //SPAWN BULLET SETS THE BULLETS POSITION EQUAL TO THE PLAYERS CURRENT POSITION.
-void::Bullet::SpawnBullet()
+void Bullet::SpawnBullet()
 {
 	//currentPosX = p.currentPosX;
 	//currentPosY = p.currentPosY;
@@ -52,7 +52,7 @@ void Bullet::MoveBullet(char i)
 //IF YES IT HITS THE ENEMY, IF NO THE BULLET MISSES.
 void Bullet::BulletHit(Enemy e)
 {
-	if (currentPosX == e.enemyPosX && currentPosY == e.enemyPosy)
+	if (currentPosX == e.enemyPosX && currentPosY == e.enemyPosY)
 	{
 		enemyHit = true;
 	}

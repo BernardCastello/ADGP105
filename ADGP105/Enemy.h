@@ -9,7 +9,7 @@ public:
 	bool enemyAttack;
 
 	int enemyPosX;
-	int enemyPosy;
+	int enemyPosY;
 
 	Enemy();
 	void EnemyAttack(Player);
@@ -21,7 +21,7 @@ public:
 Enemy::Enemy()
 {
 	enemyPosX = 2;
-	enemyPosy = 3;
+	enemyPosY = 3;
 	enemyAlive = true;
 }
 
@@ -29,7 +29,7 @@ Enemy::Enemy()
 //IF YES IT KILLS THE PLAYER, IF NOT IT CHECKS AGAIN.
 void Enemy::EnemyAttack(Player p)
 {
-	if (p.currentPosX == enemyPosX && p.currentPosY == enemyPosy)
+	if (p.currentPosX == enemyPosX && p.currentPosY == enemyPosY)
 	{
 		enemyAttack = true;
 	}
@@ -44,7 +44,7 @@ void Enemy::EnemyAttack(Player p)
 //IF NO THE ENEMY IS STILL ALIVE.
 void Enemy::EnemyDead()
 {
-	if (enemyHit)
+	/*if (b.enemyHit)
 	{
 		cout << "ENEMY TERMINATED" << endl;
 		enemyAlive = false;
@@ -54,5 +54,5 @@ void Enemy::EnemyDead()
 	{
 		cout << "TARGET MISSED" << endl;
 		enemyAlive = true;
-	}
+	}*/
 }

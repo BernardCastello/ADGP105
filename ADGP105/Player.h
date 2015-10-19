@@ -16,7 +16,7 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void Attack();			
+	void Attack();
 	void HasGoal();
 };
 
@@ -73,11 +73,7 @@ void Player::Controller(char i)
 //CALLS IN THE SPAWNBULLET, AND MOVEBULLET FUNCTIONS IF PLAYERATTACK=TRUE.
 void Player::Attack()
 {
-	if (playerAttack)
-	{
-		/*b.SpawnBullet(p);
-		b.MoveBullet(input);*/
-	}
+	//SpawnBullet(int, int);
 }
 
 //CHECKS IF THE PLAYER'S POSITION IS EQUAL TO THE GOAL'S POSITION.
