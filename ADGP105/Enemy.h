@@ -13,7 +13,7 @@ public:
 
 	Enemy();
 	void EnemyAttack(Player);
-	void EnemyDead();
+	//void EnemyDead();
 };
 
 //ENEMY CONSTRUCTOR SETS THE VALUES FOR THE COORDINATES,
@@ -40,19 +40,19 @@ void Enemy::EnemyAttack(Player p)
 	}
 }
 
-//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
-//IF NO THE ENEMY IS STILL ALIVE.
-void Enemy::EnemyDead()
-{
-	/*if (b.enemyHit)
-	{
-		cout << "ENEMY TERMINATED" << endl;
-		enemyAlive = false;
-	}
 
-	else
-	{
-		cout << "TARGET MISSED" << endl;
-		enemyAlive = true;
-	}*/
-}
+
+//void Enemy::EnemyDead()
+//{
+//	/*if (enemyHit == true)
+//	{
+//		cout << "ENEMY TERMINATED" << endl;
+//		enemyAlive = false;
+//	}
+//
+//	else
+//	{
+//		cout << "TARGET MISSED" << endl;
+//		enemyAlive = true;
+//	}*/
+//}

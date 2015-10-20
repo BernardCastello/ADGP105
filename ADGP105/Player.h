@@ -16,12 +16,21 @@ public:
 	Player();
 	void PSpawn();
 	void Controller(char);
-	void Attack();
 	void HasGoal();
 };
 
-//CONSTRUCTOR SET THE STARTING POSITION EQUAL TO ZERO, HASGOLD TO FALSE, 
-//AND ATTACK TO FALSE.
+//PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
+//AND SETS THE PLAYERS COORDINATES TO ZERO.
+Player::Player()
+{
+	playerAlive = true;
+	playerAttack = false;
+	currentPosX = 0;
+	currentPosY = 0;
+}
+
+//SPAWN FUNCTION SETS THE STARTING POSITION EQUAL TO ZERO, HasGoal TO FALSE, 
+//AND Attack TO FALSE.
 void Player::PSpawn()
 {
 	if (playerAlive)
@@ -34,7 +43,6 @@ void Player::PSpawn()
 //MOVES THE PLAYER VIA A SWITCH STATEMENT BETWEEN THE WASD keys.
 //CALLS IN THE ATTACK FUNCTION WHEN K key IS PRESSED.
 //DEPENDING ON WHICH KEY IS INPUT THE PLAYER IS MOVED 1 SPACE ON THE GRID.
-
 void Player::Controller(char i)
 {
 	switch (i)
@@ -46,7 +54,7 @@ void Player::Controller(char i)
 
 	case 'a':
 		playerMove = true;
-		currentPosX = currentPosX- 1;
+		currentPosX = currentPosX - 1;
 		break;
 
 	case 's':
@@ -70,17 +78,11 @@ void Player::Controller(char i)
 	}
 }
 
-//CALLS IN THE SPAWNBULLET, AND MOVEBULLET FUNCTIONS IF PLAYERATTACK=TRUE.
-void Player::Attack()
-{
-	//SpawnBullet(int, int);
-}
-
-//CHECKS IF THE PLAYER'S POSITION IS EQUAL TO THE GOAL'S POSITION.
+//CHECKS IF THE PLAYER'S POSITION IS EQUAL TO 4, 4.
 //IF YES THEN THE PLAYER HAS THE GOAL, IF NO THEN THE GAME CONTINUES.
 void Player::HasGoal()
 {
-	/*if (currentPosX == goalPosX && currentPosY == goalPosY)
+	if (currentPosX == 4 && currentPosY == 4)
 	{
 		playerHasGoal = true;
 	}
@@ -88,15 +90,5 @@ void Player::HasGoal()
 	else
 	{
 		playerHasGoal = false;
-	}*/
-}
-
-//PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
-//AND SETS THE PLAYERS COORDINATES TO ZERO.
-Player::Player()
-{
-	playerAlive = true;
-	playerAttack = false;
-	currentPosX = 0;
-	currentPosY = 0;
+	}
 }

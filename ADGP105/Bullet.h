@@ -7,7 +7,7 @@ class Bullet
 public:
 	bool enemyHit = false;
 	Bullet();
-	void SpawnBullet();
+	void SpawnBullet(Player);
 	void MoveBullet(char);
 	void BulletHit(Enemy);
 
@@ -19,10 +19,10 @@ private:
 Bullet::Bullet() {}
 
 //SPAWN BULLET SETS THE BULLETS POSITION EQUAL TO THE PLAYERS CURRENT POSITION.
-void Bullet::SpawnBullet()
+void Bullet::SpawnBullet(Player p)
 {
-	//currentPosX = p.currentPosX;
-	//currentPosY = p.currentPosY;
+	currentPosX = p.currentPosX;
+	currentPosY = p.currentPosY;
 }
 
 //MOVE BULLET USES A SWITCH STATEMENT TO MOVE THE BULLET BASED ON USER INPUT.
@@ -30,19 +30,19 @@ void Bullet::MoveBullet(char i)
 {
 	switch (i)
 	{
-	case 'w':
+	case 'j':
 		currentPosY = currentPosY + 1;
 		break;
 
-	case 'a':
+	case 'u':
 		currentPosX = currentPosX - 1;
 		break;
 
-	case 's':
+	case 'i':
 		currentPosY = currentPosY - 1;
 		break;
 
-	case 'd':
+	case 'o':
 		currentPosX = currentPosX + 1;
 		break;
 	}
