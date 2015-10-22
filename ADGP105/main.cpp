@@ -3,7 +3,6 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Bullet.h"
-//#include "Goal.h"
 
 //PROBLEM: CREATE A 4X4 GRID AND MOVE A PLAYER ON IT WHILE AVOIDING, 
 //OR KILLING, THE ENEMY TO REACH THE GOAL.
@@ -16,7 +15,6 @@ int main()
 	Grid g = Grid(); //CREATES AN INSTANCE OF THE GRID.
 	Bullet b = Bullet(); //CREATES AN INSTANCE OF THE BULLET.
 	Enemy e = Enemy(); //CREATES AN INSTANCE OF THE ENEMY.
-	//Goal gl = Goal(); //CREATES AN INSTANCE OF THE GOAL.
 
 	g.DrawGrid();  //CALLS IN THE DRAW GRID FUNCTION.
 	p.PSpawn();	   //CALLS IN THE PLAYER SPAWN FUNCTION.
@@ -55,6 +53,7 @@ int main()
 			cout << "SELECT FIRING DIRECTION: " << endl;
 			b.SpawnBullet(p);
 			b.MoveBullet(input);
+			break;
 		}
 
 		if (e.enemyAttack)
