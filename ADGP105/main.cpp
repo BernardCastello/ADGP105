@@ -53,7 +53,7 @@ int main()
 			cout << "SELECT FIRING DIRECTION: " << endl;
 			b.SpawnBullet(p);
 			b.MoveBullet(input);
-			break;
+			b.BulletHit(e);
 		}
 
 		if (e.enemyAttack)
@@ -76,7 +76,6 @@ int main()
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(p);
-		b.BulletHit(e);
 	}
 
 	//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
