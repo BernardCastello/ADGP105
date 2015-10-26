@@ -30,8 +30,9 @@ int main()
 	//CHECKS TO SEE IF PLAYER ALIVE AND IF YES TAKES IN AN INPUT, 
 	//AND CALLS THE PLAYER CONTROL AND ATTACK FUNCTIONS,
 	//IF THE PLAYER MOVES DISPLAY THE NEW POSITION,
-	//IF ATTACK FUNCTION CALLED ASK FOR DIRECTION TO SHOOT.
-	//IF THE PLAYER DIES IT DE-ACTIVATES THE CONTROLS AND DISPLAYS GAME OVER MESSAGE.
+	//IF playerAttack is eq,IT SPAWNS THE BULLET, ASKS FOR DIRECTION TO SHOOT,
+	//AND CHECKS IF THE BULLET HITS, IF YES IT KILLS THE ENEMY, AND IF NO THE ENEMY IS STILL ALIVE.
+	//IF THE PLAYER DIES IT DEACTIVATES THE CONTROLS AND DISPLAYS GAME OVER MESSAGE.
 	//IF THE PLAYER REACHES THE GOAL IT DISPLAYS A MESSAGE AND DEACTIVATES THE CONTROLS.
 	while (p.playerAlive)						
 	{
@@ -40,12 +41,11 @@ int main()
 		p.Controller(input);
 		p.HasGoal();
 		e.EnemyAttack(p);
-		b.SpawnBullet(p);
-		b.MoveBullet(input);
+		
 
 		if (p.playerMove)
 		{
-			cout<<"CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
+			cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
 		}
 
 		if (p.playerAttack)
@@ -70,9 +70,8 @@ int main()
 	}
 
 	//CHECKS TO SEE IF THE ENEMY IS ALIVE,
-	//IF YES IT CALLS THE EnemyAttack, AND BulletHit FUNCTIONS.
-	//IF BulletHit RETURNS TRUE THE ENEMY DIES.
-
+	//IF YES IT CALLS THE EnemyAttack FUNCTION.
+	//IF EnemyAttack FUNCTION RETURNS TRUE IT KILLS THE PLAYER.
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(p);	

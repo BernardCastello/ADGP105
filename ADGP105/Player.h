@@ -33,11 +33,8 @@ Player::Player()
 //AND Attack TO FALSE.
 void Player::PSpawn()
 {
-	if (playerAlive)
-	{
-		playerHasGoal = false;
-		playerAttack = false;
-	}
+	playerHasGoal = false;
+	playerAttack = false;
 }
 
 //MOVES THE PLAYER VIA A SWITCH STATEMENT BETWEEN THE WASD keys.
