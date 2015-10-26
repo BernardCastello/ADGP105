@@ -13,7 +13,6 @@ public:
 
 	Enemy();
 	void EnemyAttack(Player);
-	//void EnemyDead();
 };
 
 //ENEMY CONSTRUCTOR SETS THE VALUES FOR THE COORDINATES,
@@ -39,20 +38,3 @@ void Enemy::EnemyAttack(Player p)
 		enemyAttack = false;
 	}
 }
-
-
-
-//void Enemy::EnemyDead()
-//{
-//	/*if (enemyHit == true)
-//	{
-//		cout << "ENEMY TERMINATED" << endl;
-//		enemyAlive = false;
-//	}
-//
-//	else
-//	{
-//		cout << "TARGET MISSED" << endl;
-//		enemyAlive = true;
-//	}*/
-//}

@@ -17,6 +17,7 @@ int main()
 	Enemy e = Enemy(); //CREATES AN INSTANCE OF THE ENEMY.
 
 	g.DrawGrid();  //CALLS IN THE DRAW GRID FUNCTION.
+	g.Boundary();  //CALLS IN THE BOUNDARY FUNCTION.
 	p.PSpawn();	   //CALLS IN THE PLAYER SPAWN FUNCTION.
 	
 	cout << "SCANNER IS DAMAGED:" << endl;
@@ -33,7 +34,6 @@ int main()
 	//IF THE PLAYER DIES IT DE-ACTIVATES THE CONTROLS AND DISPLAYS GAME OVER MESSAGE.
 	//IF THE PLAYER REACHES THE GOAL IT DISPLAYS A MESSAGE AND DEACTIVATES THE CONTROLS.
 	while (p.playerAlive)						
-	
 	{
 		char input;
 		cin >> input;
@@ -75,7 +75,7 @@ int main()
 
 	while (e.enemyAlive)
 	{
-		e.EnemyAttack(p);
+		e.EnemyAttack(p);	
 	}
 
 	//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
