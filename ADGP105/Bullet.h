@@ -52,7 +52,7 @@ void Bullet::MoveBullet(char i)
 //IF YES IT HITS THE ENEMY, IF NO THE BULLET MISSES.
 void Bullet::BulletHit(Enemy e)
 {
-	if (currentPosX == e.enemyPosX && currentPosY == e.enemyPosY)
+	if ((currentPosX == e.enemyPosX) && (currentPosY == e.enemyPosY))
 	{
 		enemyHit = true;
 	}

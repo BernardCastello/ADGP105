@@ -30,7 +30,7 @@ int main()
 	//CHECKS TO SEE IF PLAYER ALIVE AND IF YES TAKES IN AN INPUT, 
 	//AND CALLS THE PLAYER CONTROL AND ATTACK FUNCTIONS,
 	//IF THE PLAYER MOVES DISPLAY THE NEW POSITION,
-	//IF playerAttack is eq,IT SPAWNS THE BULLET, ASKS FOR DIRECTION TO SHOOT,
+	//IF playerAttack IS TRUE,IT SPAWNS THE BULLET, ASKS FOR DIRECTION TO SHOOT,
 	//AND CHECKS IF THE BULLET HITS, IF YES IT KILLS THE ENEMY, AND IF NO THE ENEMY IS STILL ALIVE.
 	//IF THE PLAYER DIES IT DEACTIVATES THE CONTROLS AND DISPLAYS GAME OVER MESSAGE.
 	//IF THE PLAYER REACHES THE GOAL IT DISPLAYS A MESSAGE AND DEACTIVATES THE CONTROLS.
@@ -52,8 +52,23 @@ int main()
 		{
 			cout << "SELECT FIRING DIRECTION: " << endl;
 			b.SpawnBullet(p);
+			cin >> input;
 			b.MoveBullet(input);
 			b.BulletHit(e);
+
+			//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
+			//IF NO THE ENEMY IS STILL ALIVE.
+			if (b.enemyHit == true)
+			{
+				cout << "ENEMY TERMINATED" << endl;
+				e.enemyAlive = false;
+			}
+
+			else
+			{
+				cout << "TARGET MISSED" << endl;
+				e.enemyAlive = true;
+			}
 		}
 
 		if (e.enemyAttack)
@@ -77,17 +92,5 @@ int main()
 		e.EnemyAttack(p);	
 	}
 
-	//CHECKS IF THE ENEMY WAS HIT, IF YES IT KILLS THE ENEMY,
-	//IF NO THE ENEMY IS STILL ALIVE.
-	if (b.enemyHit == true)
-	{
-		cout << "ENEMY TERMINATED" << endl;
-		e.enemyAlive = false;
-	}
-
-	else
-	{
-		cout << "TARGET MISSED" << endl;
-		e.enemyAlive = true;
-	}
+	
 }
