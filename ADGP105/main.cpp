@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Grid.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -17,14 +18,19 @@ int main()
 	Enemy e = Enemy(); //CREATES AN INSTANCE OF THE ENEMY.
 
 	g.DrawGrid();  //CALLS IN THE DRAW GRID FUNCTION.
-	g.Boundary();  //CALLS IN THE BOUNDARY FUNCTION.
 	p.PSpawn();	   //CALLS IN THE PLAYER SPAWN FUNCTION.
 	
-	cout << "SCANNER IS DAMAGED:" << endl;
+	file.open("OpeningText.txt", ios_base::in);
+	
+	file.close();
+
+	/*cout << "SCANNER IS DAMAGED:" << endl;
 	cout << "ENEMY DETECTION: OFFLINE" << endl;
 	cout << "ARTIFACT DETECTION: ONLINE" << endl;
+	cout << "WARNING: CAVE IS GEOLOGICALLY UNSTABLE" << endl;
+	cout << "CAVE SIZE MAPPED TO 4X4 GRID, IMPACTING WALL WILL CAUSE A CAVE IN" << endl;
 	cout << "RESERVE AMMO: FULL" << endl;
-	cout << "ENTERING CAVE" << endl;
+	cout << "ENTERING CAVE" << endl;*/
 	cout << "CURRENT POSITION: " << p.currentPosX << ", " << p.currentPosY << endl;
 
 	//CHECKS TO SEE IF PLAYER ALIVE AND IF YES TAKES IN AN INPUT, 
@@ -41,7 +47,7 @@ int main()
 		p.Controller(input);
 		p.HasGoal();
 		e.EnemyAttack(p);
-		
+		p.Wall();
 
 		if (p.playerMove)
 		{
@@ -77,6 +83,12 @@ int main()
 			cout << "GAME OVER" << endl;
 		}
 
+		if (p.playerWall)
+		{
+			cout << "YOU HIT A WALL AND CAUSED A CAVE IN, MISSION FAILED" << endl;
+			p.playerAlive = false;
+		}
+
 		if (p.playerHasGoal)
 		{
 			p.playerAlive = false;
@@ -91,6 +103,4 @@ int main()
 	{
 		e.EnemyAttack(p);	
 	}
-
-	
 }

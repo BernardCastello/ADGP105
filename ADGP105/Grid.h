@@ -6,13 +6,14 @@ class Grid
 {	
 public:
 	void DrawGrid();
-	void Boundary();
 	Grid();
 
 private:
 	int size[16];
 	int rows;
 	int cols;
+	int boundPosX;
+	int boundPosY;
 };
 
 //GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
@@ -29,14 +30,7 @@ void Grid::DrawGrid()
 	{
 		for (int c = 0; c <= cols; c++)
 		{
-			
+			break;
 		}
 	}
-}
-
-//Boundary SETS THE EDGE OF THE GRID,
-//AND STOPS THE PLAYER FORM MOVING WHEN EDGE IS REACHED
-void Grid::Boundary()
-{
-
 }

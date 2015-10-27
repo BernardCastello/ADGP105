@@ -1,6 +1,6 @@
-//PLAYER CLASS CONTAINS BOOLEANS FOR MOVE, ALIVE, ATTACK, AND HAS GOLD.
-//INTEGERS FOR THE STARTING POSITION, A PUBLIC CONSTRUCTOR, SPAWN, CONTROLLER, 
-//AND ATTACK FUNCTIONS, AS WELL AS A PRIVATE GOAL FUNCTION.
+//PLAYER CLASS CONTAINS BOOLEANS FOR MOVE, ALIVE, ATTACK, HITS A WALL, AND HAS GOLD.
+//INTEGERS FOR THE STARTING POSITION, A PUBLIC CONSTRUCTOR, Spawn, Controller, 
+//AND Attack FUNCTIONS, HasGoal FUNCTION.
 #pragma once
 class Player
 {
@@ -9,6 +9,7 @@ public:
 	bool playerMove;
 	bool playerAttack;
 	bool playerHasGoal;
+	bool playerWall;
 
 	int currentPosY;
 	int currentPosX;
@@ -17,6 +18,7 @@ public:
 	void PSpawn();
 	void Controller(char);
 	void HasGoal();
+	void Wall();
 };
 
 //PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
@@ -34,7 +36,7 @@ Player::Player()
 void Player::PSpawn()
 {
 	playerHasGoal = false;
-	playerAttack = false;
+	playerWall = false;
 }
 
 //MOVES THE PLAYER VIA A SWITCH STATEMENT BETWEEN THE WASD keys.
@@ -87,5 +89,23 @@ void Player::HasGoal()
 	else
 	{
 		playerHasGoal = false;
+	}
+}
+
+void Player::Wall()
+{
+	if (currentPosX >= 4 || currentPosY >= 4)
+	{
+		playerWall = true;
+	}
+
+	else if (currentPosX < 0 || currentPosY < 0)
+	{
+		playerWall = true;
+	}
+
+	else
+	{
+		playerWall = false;
 	}
 }
