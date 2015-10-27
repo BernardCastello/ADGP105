@@ -94,7 +94,7 @@ void Player::HasGoal()
 
 void Player::Wall()
 {
-	if (currentPosX >= 4 || currentPosY >= 4)
+	if (currentPosX == 5 || currentPosY == 5)
 	{
 		playerWall = true;
 	}

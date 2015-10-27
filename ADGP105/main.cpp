@@ -20,18 +20,28 @@ int main()
 	g.DrawGrid();  //CALLS IN THE DRAW GRID FUNCTION.
 	p.PSpawn();	   //CALLS IN THE PLAYER SPAWN FUNCTION.
 	
+	//READS AND DISPLAYS THE GameStart TEXT FROM THE OpeningText.txt FILE
+	ifstream file;
 	file.open("OpeningText.txt", ios_base::in);
-	
-	file.close();
+	char stuff[35];
 
-	/*cout << "SCANNER IS DAMAGED:" << endl;
+	if (file.is_open())
+	{
+		file >> stuff;
+	}
+
+	cout << stuff << endl;
+	file.close();
+	cout << endl;
+
+	cout << "SCANNER IS DAMAGED:" << endl;
 	cout << "ENEMY DETECTION: OFFLINE" << endl;
 	cout << "ARTIFACT DETECTION: ONLINE" << endl;
 	cout << "WARNING: CAVE IS GEOLOGICALLY UNSTABLE" << endl;
-	cout << "CAVE SIZE MAPPED TO 4X4 GRID, IMPACTING WALL WILL CAUSE A CAVE IN" << endl;
+	cout << "CAVE SIZE MAPPED TO 5X5 GRID, IMPACTING WALL WILL CAUSE A CAVE IN" << endl;
 	cout << "RESERVE AMMO: FULL" << endl;
-	cout << "ENTERING CAVE" << endl;*/
-	cout << "CURRENT POSITION: " << p.currentPosX << ", " << p.currentPosY << endl;
+	cout << "ENTERING CAVE" << endl;
+	cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
 
 	//CHECKS TO SEE IF PLAYER ALIVE AND IF YES TAKES IN AN INPUT, 
 	//AND CALLS THE PLAYER CONTROL AND ATTACK FUNCTIONS,
@@ -85,14 +95,26 @@ int main()
 
 		if (p.playerWall)
 		{
-			cout << "YOU HIT A WALL AND CAUSED A CAVE IN, MISSION FAILED" << endl;
 			p.playerAlive = false;
+			cout << "YOU HIT A WALL AND CAUSED A CAVE IN, MISSION FAILED" << endl;
 		}
 
 		if (p.playerHasGoal)
 		{
 			p.playerAlive = false;
 			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
+		}
+
+		if (p.playerAlive == false)
+		{
+			ofstream file;
+			file.open("Pilots.txt", ios_base::out);
+			char gameEnd[35];
+
+			if (file.is_open())
+			{
+				file << "GameOver" << endl;
+			}
 		}
 	}
 

@@ -9,7 +9,7 @@ public:
 	Grid();
 
 private:
-	int size[16];
+	int size[25];
 	int rows;
 	int cols;
 	int boundPosX;
@@ -19,8 +19,8 @@ private:
 //GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
 Grid::Grid()
 {
-	cols = 4;
-	rows = 4;
+	cols = 5;
+	rows = 5;
 }
 
 //DRAW GRID FUNCTION USES A NESTED FOR LOOP TO CREATE THE ROWS AND COLUMNS.
