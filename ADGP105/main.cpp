@@ -78,12 +78,14 @@ int main()
 			{
 				cout << "ENEMY TERMINATED" << endl;
 				e.enemyAlive = false;
+				p.playerAttack = false;
 			}
 
 			else
 			{
 				cout << "TARGET MISSED" << endl;
 				e.enemyAlive = true;
+				p.playerAttack = false;
 			}
 		}
 
@@ -91,6 +93,11 @@ int main()
 		{
 			p.playerAlive = false;
 			cout << "GAME OVER" << endl;
+		}
+
+		if (e.enemyAlive == false)
+		{
+
 		}
 
 		if (p.playerWall)
@@ -109,7 +116,6 @@ int main()
 		{
 			ofstream file;
 			file.open("Pilots.txt", ios_base::out);
-			char gameEnd[35];
 
 			if (file.is_open())
 			{

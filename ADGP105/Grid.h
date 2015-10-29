@@ -26,6 +26,8 @@ Grid::Grid()
 //DRAW GRID FUNCTION USES A NESTED FOR LOOP TO CREATE THE ROWS AND COLUMNS.
 void Grid::DrawGrid()
 {
+	int* gridSize = &size[25];
+
 	for (int r = 0; r <= rows; r++)
 	{
 		for (int c = 0; c <= cols; c++)
