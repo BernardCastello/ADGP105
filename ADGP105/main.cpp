@@ -95,11 +95,6 @@ int main()
 			cout << "GAME OVER" << endl;
 		}
 
-		if (e.enemyAlive == false)
-		{
-
-		}
-
 		if (p.playerWall)
 		{
 			p.playerAlive = false;
@@ -129,6 +124,11 @@ int main()
 	//IF EnemyAttack FUNCTION RETURNS TRUE IT KILLS THE PLAYER.
 	while (e.enemyAlive)
 	{
-		e.EnemyAttack(p);	
+		e.EnemyAttack(p);
+
+		if (e.enemyAlive == false)
+		{
+
+		}
 	}
 }
