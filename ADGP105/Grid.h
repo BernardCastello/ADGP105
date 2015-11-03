@@ -1,6 +1,6 @@
-//GRID CLASS CONTAINS THE DRAWGRID function, 
-//AND CONSTRUCTOR AS PUBLIC VARIABLES,
-//AND THE SIZE ARRAY, ROWS, AND COLUMNS AS PRIVATE VARIABLES
+//Grid class contains the DrawGrid function, 
+//and constructor as public variables,
+//and stores the array for size and the number of rows and columns as private variables
 #pragma once
 class Grid
 {	
@@ -14,14 +14,15 @@ private:
 	int cols;
 };
 
-//GRID CONSTRUCTOR SETS THE VALUES FOR THE ROWS AND COLUMNS.
+//Grid constructor sets the number of rows and columns.
 Grid::Grid()
 {
 	cols = 5;
 	rows = 5;
 }
 
-//DRAW GRID FUNCTION USES A NESTED FOR LOOP TO CREATE THE ROWS AND COLUMNS.
+//DrawGrid function uses a nested for loop to create the rows and columns.
+//Uses a pointer to reference the array for the grid size.
 void Grid::DrawGrid()
 {
 	int* gridSize = &size[25];

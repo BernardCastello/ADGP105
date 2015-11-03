@@ -1,6 +1,6 @@
-//PLAYER CLASS CONTAINS BOOLEANS FOR MOVE, ALIVE, ATTACK, HITS A WALL, AND HAS GOLD.
-//INTEGERS FOR THE STARTING POSITION, A PUBLIC CONSTRUCTOR, Spawn, Controller, 
-//AND Attack FUNCTIONS, HasGoal FUNCTION.
+//Player class contains booleans for Move, Attack, Hits a wall, and has Goal.
+//Integers for the starting position, a public constructor, Spawn, Controller, 
+//Attack, Wall, and HasGoal functions.
 #pragma once
 class Player
 {
@@ -21,27 +21,24 @@ public:
 	void Wall();
 };
 
-//PLAYER CONSTRUCTOR SETS PLAYER ALIVE TO TRUE, PLAYER ATTACK TO FALSE,
-//AND SETS THE PLAYERS COORDINATES TO ZERO.
-Player::Player()
-{
-	playerAlive = true;
-	playerAttack = false;
-	currentPosX = 0;
-	currentPosY = 0;
-}
+//Default Player Constructor
+Player::Player() {}
 
-//SPAWN FUNCTION SETS THE STARTING POSITION EQUAL TO ZERO, HasGoal TO FALSE, 
-//AND Attack TO FALSE.
+//PSpawn function sets the current position to 0, 
+//Alive to true, Attack to false, Wall to false, HasGoal to false. 
 void Player::PSpawn()
 {
+	currentPosX = 0;
+	currentPosY = 0;
+	playerAlive = true;
+	playerAttack = false;
 	playerHasGoal = false;
 	playerWall = false;
 }
 
-//MOVES THE PLAYER VIA A SWITCH STATEMENT BETWEEN THE WASD keys.
-//CALLS IN THE ATTACK FUNCTION WHEN K key IS PRESSED.
-//DEPENDING ON WHICH KEY IS INPUT THE PLAYER IS MOVED 1 SPACE ON THE GRID.
+//Controller moves the player 1 space on the grid, depending on the user input.
+//Movement is handled via a switch statement between the WASD keys.
+//Pressing the K key sets playerAttack to true.
 void Player::Controller(char i)
 {
 	switch (i)
@@ -77,8 +74,8 @@ void Player::Controller(char i)
 	}
 }
 
-//CHECKS IF THE PLAYER'S POSITION IS EQUAL TO 4, 4.
-//IF YES THEN THE PLAYER HAS THE GOAL, IF NO THEN THE GAME CONTINUES.
+//HasGoal funciton checks if the player's position is equal to 4, 4.
+//If yes then the player has the goal and the game ends, if no then the game continues.
 void Player::HasGoal()
 {
 	if (currentPosX == 4 && currentPosY == 4)
@@ -92,6 +89,9 @@ void Player::HasGoal()
 	}
 }
 
+//Wall checks if the player's position is equal to 5,
+//or less than 0. If either condition is true playerWall is set to true.
+//If the conditions are false then the game continues.
 void Player::Wall()
 {
 	if (currentPosX == 5 || currentPosY == 5)

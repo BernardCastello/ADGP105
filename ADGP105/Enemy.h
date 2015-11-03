@@ -1,6 +1,6 @@
-//ENEMY CLASS CONTAINS BOOLEANS FOR ALIVE AND ATTACK,
-//INTEGERS FOR THE ENEMY'S POSITION, THE CONSTRUCTOR,
-//AND THE ATTACK AND DEAD FUNCTIONS.
+//Enemy class contains a constructor and a function for attacking the player,
+//the constructor, variables for if the enemy is alive, 
+//and attacking as well as the positions, the constructor,
 #pragma once
 class Enemy
 {
@@ -15,8 +15,8 @@ public:
 	void EnemyAttack(Player);
 };
 
-//ENEMY CONSTRUCTOR SETS THE VALUES FOR THE COORDINATES,
-//AND SETS ENEMY ALIVE TO TRUE.
+//Enemy constructor sets the enemy's coordinates,
+//and attack to false.
 Enemy::Enemy()
 {
 	enemyPosX = 2;
@@ -24,8 +24,8 @@ Enemy::Enemy()
 	enemyAlive = true;
 }
 
-//CHECKS IF THE PLAYERS POSITION IS EQUAL TO THE ENEMY'S POSITION,
-//IF YES IT KILLS THE PLAYER, IF NOT IT CHECKS AGAIN.
+//Checks if the player's position is equal to the enemy's position.
+//If yes the player dies, and if no the game continues.
 void Enemy::EnemyAttack(Player p)
 {
 	if (p.currentPosX == enemyPosX && p.currentPosY == enemyPosY)

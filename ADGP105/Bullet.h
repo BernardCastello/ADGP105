@@ -1,6 +1,6 @@
-//PLAYER CLASS CONTAINS A BOOLEAN TO CHECK IF THE ENEMY IS HIT,
-//THE CONSTRUCTOR, SPAWN, AND HIT FUNCTIONS.
-//CONTAINS PRIVATE VARIABLES FOR POSITION.
+//Bullet class contains a boolean for if the enemy is hit,
+//The constructor, spawn, move, and hit functions.
+//Contains private variables for position.
 #pragma once
 class Bullet
 {
@@ -18,14 +18,14 @@ private:
 
 Bullet::Bullet() {}
 
-//SPAWN BULLET SETS THE BULLET'S POSITION EQUAL TO THE PLAYER'S CURRENT POSITION.
+//SpawnBullet sets the bullets position equal to the player's position.
 void Bullet::SpawnBullet(Player p)
 {
 	currentPosX = p.currentPosX;
 	currentPosY = p.currentPosY;
 }
 
-//MOVE BULLET USES A SWITCH STATEMENT TO MOVE THE BULLET BASED ON USER INPUT.
+//MoveBullet uses a swithc statement to move the bullet based on usert input.
 void Bullet::MoveBullet(char i)
 {
 	switch (i)
@@ -48,8 +48,8 @@ void Bullet::MoveBullet(char i)
 	}
 }
 
-//CHECKS IF THE BULLET'S POSITION IS EQUAL TO THE ENEMY'S POSITION
-//IF YES IT HITS THE ENEMY, IF NO THE BULLET MISSES.
+//BulletHit checks if the bullet's position is 
+//If yes it hits the enemy, and if no it misses the enemy.
 void Bullet::BulletHit(Enemy e)
 {
 	if ((currentPosX == e.enemyPosX) && (currentPosY == e.enemyPosY))
