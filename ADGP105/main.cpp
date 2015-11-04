@@ -118,10 +118,5 @@ int main()
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(p);
-
-		if (e.enemyAlive == false)
-		{
-
-		}
 	}
 }

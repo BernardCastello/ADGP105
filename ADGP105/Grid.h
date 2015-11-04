@@ -33,5 +33,7 @@ void Grid::DrawGrid()
 		{
 			break;
 		}
+
+		break;
 	}
 }
