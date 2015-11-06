@@ -1,17 +1,18 @@
-﻿Build started 10/28/2015 9:43:06 AM.
+﻿Build started 11/6/2015 5:19:07 PM.
      1>Project "C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\ADGP105\ADGP105.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>main.cpp(112): warning C4101: 'gameEnd': unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Release\ADGP105.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Release\ADGP105.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Release\ADGP105.lib" /MACHINE:X86 /SAFESEH Release\main.obj
          Generating code
-         All 161 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         5 of 161 functions ( 3.1%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
          ADGP105.vcxproj -> C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\Release\ADGP105.exe
      1>Done Building Project "C:\Users\bernard.castello\Documents\Visual Studio 2015\Projects\ADGP105\ADGP105\ADGP105.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.23
+Time Elapsed 00:00:00.82
