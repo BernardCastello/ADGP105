@@ -2,10 +2,13 @@
 //and constructor as public variables,
 //and stores the array for size and the number of rows and columns as private variables
 #pragma once
+#include <iostream>
+
 class Grid
 {	
 public:
 	void DrawGrid();
+	void UpdateGrid();
 	Grid();
 
 private:
@@ -27,13 +30,18 @@ void Grid::DrawGrid()
 {
 	int* gridSize = &size[25];
 
-	for (int r = 0; r <= rows; r++)
+	for (int r = 0; r < rows; r++)
 	{
-		for (int c = 0; c <= cols; c++)
-		{
-			break;
-		}
 
-		break;
+		for (int c = 0; c < cols; c++)
+		{
+			std::cout << "#";
+		}
+		std::cout << std::endl;
 	}
+}
+
+void Grid::UpdateGrid()
+{
+
 }

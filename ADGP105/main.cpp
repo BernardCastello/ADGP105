@@ -13,9 +13,6 @@ int main()
 	Grid g = Grid(); //Creates an instance of the grid.
 	Bullet b = Bullet(); //Creates an intance of the bullet.
 	Enemy e = Enemy(); //Creates an instance of the enemy.
-
-	g.DrawGrid();  //Calls in the DrawGrid function.
-	p.PSpawn();	   //Calls in the player spawn function.
 	
 	//Reads and displays the GameStart text from OpeningText.txt file.
 	ifstream file;
@@ -29,8 +26,7 @@ int main()
 
 	cout << stuff << endl;
 	file.close();
-	cout << endl;
-
+	
 	cout << "SCANNER IS DAMAGED:" << endl;
 	cout << "ENEMY DETECTION: OFFLINE" << endl;
 	cout << "ARTIFACT DETECTION: ONLINE" << endl;
@@ -38,6 +34,11 @@ int main()
 	cout << "CAVE SIZE MAPPED TO 5X5 GRID, IMPACTING WALL WILL CAUSE A CAVE IN" << endl;
 	cout << "RESERVE AMMO: FULL" << endl;
 	cout << "ENTERING CAVE" << endl;
+	
+	g.DrawGrid();  //Calls in the DrawGrid function.
+	p.PSpawn();   //Calls in the player spawn function.
+	cout << endl;
+	
 	cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
 
 	//Checks to see if the player is alive and if yes takes in an input, 
@@ -58,6 +59,7 @@ int main()
 		if (p.playerMove)
 		{
 			cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
+			g.UpdateGrid();
 		}
 
 		if (p.playerAttack)
