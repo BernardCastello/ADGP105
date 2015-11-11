@@ -42,5 +42,5 @@ void Grid::DrawGrid()
 
 void Grid::UpdateGrid()
 {
-
+	DrawGrid();
 }

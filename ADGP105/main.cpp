@@ -9,8 +9,8 @@ using namespace std;
 
 int main()
 {
-	Player p = Player(); //Creates an instance of the player.
 	Grid g = Grid(); //Creates an instance of the grid.
+	Player p = Player(); //Creates an instance of the player.
 	Bullet b = Bullet(); //Creates an intance of the bullet.
 	Enemy e = Enemy(); //Creates an instance of the enemy.
 	
@@ -58,8 +58,8 @@ int main()
 
 		if (p.playerMove)
 		{
-			cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
 			g.UpdateGrid();
+			cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
 		}
 
 		if (p.playerAttack)
