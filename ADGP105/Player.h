@@ -19,6 +19,7 @@ public:
 	void Controller(char);
 	void HasGoal();
 	void Wall();
+	void UpdateGrid(Grid);
 };
 
 //Default Player Constructor
@@ -107,5 +108,16 @@ void Player::Wall()
 	else
 	{
 		playerWall = false;
+	}
+}
+
+void Player::UpdateGrid(Grid g)
+{
+	g.DrawGrid();
+
+	for (currentPosX; currentPosY;)
+	{
+		std::cout << "P" << std::endl;
+		break;
 	}
 }

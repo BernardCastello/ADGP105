@@ -4,16 +4,18 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Bullet.h"
+#include "Pits.h"
 
 using namespace std;
 
 int main()
 {
 	Grid g = Grid(); //Creates an instance of the grid.
-	Player p = Player(); //Creates an instance of the player.
+	Player pl = Player(); //Creates an instance of the player.
 	Bullet b = Bullet(); //Creates an intance of the bullet.
 	Enemy e = Enemy(); //Creates an instance of the enemy.
-	
+	Pit p = Pit();
+
 	//Reads and displays the GameStart text from OpeningText.txt file.
 	ifstream file;
 	file.open("OpeningText.txt", ios_base::in);
@@ -36,10 +38,11 @@ int main()
 	cout << "ENTERING CAVE" << endl;
 	
 	g.DrawGrid();  //Calls in the DrawGrid function.
-	p.PSpawn();   //Calls in the player spawn function.
+	p.SpawnPit();  //Calls in the SpawnPit function.
+	pl.PSpawn();   //Calls in the player spawn function.
 	cout << endl;
 	
-	cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
+	cout << "CURRENT POSTIION: " << pl.currentPosX << ", " << pl.currentPosY << endl;
 
 	//Checks to see if the player is alive and if yes takes in an input, 
 	//And calls the Controller function, if the playerMove is true display new position.
@@ -47,25 +50,25 @@ int main()
 	//Checks to see if bullet hits an enemy or not, and displays appropriate message.
 	//If the player dies or reaches the goal diplays a message and deactivates the controls.
 	//Writes GameOver text to Pilots.txt file.
-	while (p.playerAlive)						
+	while (pl.playerAlive)						
 	{
 		char input;
 		cin >> input;
-		p.Controller(input);
-		p.HasGoal();
-		e.EnemyAttack(p);
-		p.Wall();
+		pl.Controller(input);
+		pl.HasGoal();
+		e.EnemyAttack(pl);
+		pl.Wall();
 
-		if (p.playerMove)
+		if (pl.playerMove)
 		{
-			g.UpdateGrid();
-			cout << "CURRENT POSTIION: " << p.currentPosX << ", " << p.currentPosY << endl;
+			pl.UpdateGrid(g);
+			cout << "CURRENT POSTIION: " << pl.currentPosX << ", " << pl.currentPosY << endl;
 		}
 
-		if (p.playerAttack)
+		if (pl.playerAttack)
 		{
 			cout << "SELECT FIRING DIRECTION: " << endl;
-			b.SpawnBullet(p);
+			b.SpawnBullet(pl);
 			cin >> input;
 			b.MoveBullet(input);
 			b.BulletHit(e);
@@ -74,36 +77,36 @@ int main()
 			{
 				cout << "ENEMY TERMINATED" << endl;
 				e.enemyAlive = false;
-				p.playerAttack = false;
+				pl.playerAttack = false;
 			}
 
 			else
 			{
 				cout << "TARGET MISSED" << endl;
 				e.enemyAlive = true;
-				p.playerAttack = false;
+				pl.playerAttack = false;
 			}
 		}
 
 		if (e.enemyAttack)
 		{
-			p.playerAlive = false;
+			pl.playerAlive = false;
 			cout << "GAME OVER" << endl;
 		}
 
-		if (p.playerWall)
+		if (pl.playerWall)
 		{
-			p.playerAlive = false;
+			pl.playerAlive = false;
 			cout << "YOU HIT A WALL AND CAUSED A CAVE IN, MISSION FAILED" << endl;
 		}
 
-		if (p.playerHasGoal)
+		if (pl.playerHasGoal)
 		{
-			p.playerAlive = false;
+			pl.playerAlive = false;
 			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
 		}
 
-		if (p.playerAlive == false)
+		if (pl.playerAlive == false)
 		{
 			ofstream file;
 			file.open("Pilots.txt", ios_base::out);
@@ -119,6 +122,6 @@ int main()
 	//If no deletes the enemy.
 	while (e.enemyAlive)
 	{
-		e.EnemyAttack(p);
+		e.EnemyAttack(pl);
 	}
 }

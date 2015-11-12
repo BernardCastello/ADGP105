@@ -8,7 +8,6 @@ class Grid
 {	
 public:
 	void DrawGrid();
-	void UpdateGrid();
 	Grid();
 
 private:
@@ -38,9 +37,4 @@ void Grid::DrawGrid()
 		}
 		std::cout << std::endl;
 	}
-}
-
-void Grid::UpdateGrid()
-{
-	DrawGrid();
 }
