@@ -111,6 +111,7 @@ void Player::Wall()
 	}
 }
 
+//Draws a letter P on the grid to indicate the player's position.
 void Player::UpdateGrid(Grid g)
 {
 	g.DrawGrid();

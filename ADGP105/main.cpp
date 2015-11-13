@@ -58,6 +58,7 @@ int main()
 		pl.HasGoal();
 		e.EnemyAttack(pl);
 		pl.Wall();
+		p.PlayerFalls(pl);
 
 		if (pl.playerMove)
 		{
@@ -91,19 +92,25 @@ int main()
 		if (e.enemyAttack)
 		{
 			pl.playerAlive = false;
-			cout << "GAME OVER" << endl;
+			cout << "YOU WERE EATEN BY THE WUMPUS: MISSION FAILED" << endl;
 		}
 
 		if (pl.playerWall)
 		{
 			pl.playerAlive = false;
-			cout << "YOU HIT A WALL AND CAUSED A CAVE IN, MISSION FAILED" << endl;
+			cout << "YOU HIT A WALL AND CAUSED A CAVE IN: MISSION FAILED" << endl;
 		}
 
 		if (pl.playerHasGoal)
 		{
 			pl.playerAlive = false;
 			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
+		}
+
+		if (p.playerFalls)
+		{
+			pl.playerAlive = false;
+			cout << "YOU HAVE FALLEN INTO A PIT: MISSION FAILED" << endl;
 		}
 
 		if (pl.playerAlive == false)
@@ -123,5 +130,10 @@ int main()
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(pl);
+
+		if (e.enemyAlive == false)
+		{
+
+		}
 	}
 }
