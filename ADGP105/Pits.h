@@ -16,8 +16,8 @@ struct Pit
 //Sets the pits coordinates.
 void Pit::SpawnPit()
 {
-	posX = 3;
-	posY = 3;
+	posX = 2;
+	posY = 2;
 }
 
 //Checks if the player's coordinates are equal to the pit's position

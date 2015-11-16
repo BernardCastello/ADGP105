@@ -12,7 +12,7 @@ int main()
 {
 	Grid g = Grid(); //Creates an instance of the grid.
 	Player pl = Player(); //Creates an instance of the player.
-	Bullet b = Bullet(); //Creates an intance of the bullet.
+	Bullet b = Bullet(); //Creates an instance of the bullet.
 	Enemy e = Enemy(); //Creates an instance of the enemy.
 	Pit p = Pit(); //Creates an instance of the pit.
 
@@ -116,13 +116,14 @@ int main()
 			pl.UpdateGrid(g);
 			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
 		}
-
+	
+		//Checks if the enemy is alive, and if yes moves the enemy of the grid.
 		if (e.enemyAlive == false)
 		{
 			e.enemyPosX = 6;
 			e.enemyPosY = 6;
 		}
-		
+
 		if (pl.playerAlive == false)
 		{
 			ofstream file;
@@ -136,7 +137,7 @@ int main()
 	}
 
 	//Checks if the enemy is alive, if yes calls EnemyAttack function.
-	//If no deletes the enemy.
+	//If no moves the enemy off the grid.
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(pl);
