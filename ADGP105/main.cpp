@@ -14,7 +14,7 @@ int main()
 	Player pl = Player(); //Creates an instance of the player.
 	Bullet b = Bullet(); //Creates an intance of the bullet.
 	Enemy e = Enemy(); //Creates an instance of the enemy.
-	Pit p = Pit();
+	Pit p = Pit(); //Creates an instance of the pit.
 
 	//Reads and displays the GameStart text from OpeningText.txt file.
 	ifstream file;
@@ -92,27 +92,37 @@ int main()
 		if (e.enemyAttack)
 		{
 			pl.playerAlive = false;
+			pl.UpdateGrid(g);
 			cout << "YOU WERE EATEN BY THE WUMPUS: MISSION FAILED" << endl;
 		}
 
 		if (pl.playerWall)
 		{
 			pl.playerAlive = false;
+			pl.UpdateGrid(g);
 			cout << "YOU HIT A WALL AND CAUSED A CAVE IN: MISSION FAILED" << endl;
-		}
-
-		if (pl.playerHasGoal)
-		{
-			pl.playerAlive = false;
-			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
 		}
 
 		if (p.playerFalls)
 		{
 			pl.playerAlive = false;
+			pl.UpdateGrid(g);
 			cout << "YOU HAVE FALLEN INTO A PIT: MISSION FAILED" << endl;
 		}
+		
+		if (pl.playerHasGoal)
+		{
+			pl.playerAlive = false;
+			pl.UpdateGrid(g);
+			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
+		}
 
+		if (e.enemyAlive == false)
+		{
+			e.enemyPosX = 6;
+			e.enemyPosY = 6;
+		}
+		
 		if (pl.playerAlive == false)
 		{
 			ofstream file;
@@ -130,10 +140,5 @@ int main()
 	while (e.enemyAlive)
 	{
 		e.EnemyAttack(pl);
-
-		if (e.enemyAlive == false)
-		{
-
-		}
 	}
 }
