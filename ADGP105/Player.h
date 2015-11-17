@@ -115,10 +115,4 @@ void Player::Wall()
 void Player::UpdateGrid(Grid g)
 {
 	g.DrawGrid();
-
-	for (currentPosX; currentPosY;)
-	{
-		std::cout << "P" << std::endl;
-		break;
-	}
 }
