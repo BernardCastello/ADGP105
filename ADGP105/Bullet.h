@@ -30,19 +30,19 @@ void Bullet::MoveBullet(char i)
 {
 	switch (i)
 	{
-	case 'j':
+	case 'i':
 		currentPosY = currentPosY + 1;
 		break;
 
-	case 'u':
+	case 'j':
 		currentPosX = currentPosX - 1;
 		break;
 
-	case 'i':
+	case 'k':
 		currentPosY = currentPosY - 1;
 		break;
 
-	case 'o':
+	case 'l':
 		currentPosX = currentPosX + 1;
 		break;
 	}

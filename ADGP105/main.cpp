@@ -39,9 +39,9 @@ int main()
 	
 	g.DrawGrid();  //Calls in the DrawGrid function.
 	p.SpawnPit();  //Calls in the SpawnPit function.
-	pl.PSpawn();   //Calls in the player spawn function.
-	cout << endl;
+	pl.PSpawn();   //Calls in the PlayerSpawn function.
 	
+	cout << endl;
 	cout << "CURRENT POSTIION: " << pl.currentPosX << ", " << pl.currentPosY << endl;
 
 	//Checks to see if the player is alive and if yes takes in an input, 
@@ -59,10 +59,12 @@ int main()
 		e.EnemyAttack(pl);
 		pl.Wall();
 		p.PlayerFalls(pl);
+		p.PitDetection(pl);
 
 		if (pl.playerMove)
 		{
-			pl.UpdateGrid(g);
+			p.PitDetection(pl);
+			//pl.UpdateGrid(g);
 			cout << "CURRENT POSTIION: " << pl.currentPosX << ", " << pl.currentPosY << endl;
 		}
 
@@ -92,28 +94,28 @@ int main()
 		if (e.enemyAttack)
 		{
 			pl.playerAlive = false;
-			pl.UpdateGrid(g);
+			//pl.UpdateGrid(g);
 			cout << "YOU WERE EATEN BY THE WUMPUS: MISSION FAILED" << endl;
 		}
 
 		if (pl.playerWall)
 		{
 			pl.playerAlive = false;
-			pl.UpdateGrid(g);
+			//pl.UpdateGrid(g);
 			cout << "YOU HIT A WALL AND CAUSED A CAVE IN: MISSION FAILED" << endl;
 		}
 
 		if (p.playerFalls)
 		{
 			pl.playerAlive = false;
-			pl.UpdateGrid(g);
+			//pl.UpdateGrid(g);
 			cout << "YOU HAVE FALLEN INTO A PIT: MISSION FAILED" << endl;
 		}
 		
 		if (pl.playerHasGoal)
 		{
 			pl.playerAlive = false;
-			pl.UpdateGrid(g);
+			//pl.UpdateGrid(g);
 			cout << "ARTIFACT RECOVERED: MISSION COMPLETE" << endl;
 		}
 	
@@ -134,6 +136,7 @@ int main()
 				file << "GameOver" << endl;
 			}
 		}
+
 	}
 
 	//Checks if the enemy is alive, if yes calls EnemyAttack function.

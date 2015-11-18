@@ -9,11 +9,11 @@ class Grid
 public:
 	void DrawGrid();
 	Grid();
+	int rows;
+	int cols;
 
 private:
 	int size[25];
-	int rows;
-	int cols;
 };
 
 //Grid constructor sets the number of rows and columns.

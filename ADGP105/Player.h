@@ -19,7 +19,7 @@ public:
 	void Controller(char);
 	void HasGoal();
 	void Wall();
-	void UpdateGrid(Grid);
+	//void UpdateGrid(Grid);
 };
 
 //Default Player Constructor
@@ -64,9 +64,12 @@ void Player::Controller(char i)
 		currentPosX = currentPosX + 1;
 		break;
 
-	case 'k':
+	case 'h':
 		playerAttack = true;
 		break;
+
+	case 'f':
+
 
 	default:
 		playerMove = false;
@@ -109,10 +112,4 @@ void Player::Wall()
 	{
 		playerWall = false;
 	}
-}
-
-//Draws a letter P on the grid to indicate the player's position.
-void Player::UpdateGrid(Grid g)
-{
-	g.DrawGrid();
 }
