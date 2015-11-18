@@ -1,6 +1,6 @@
 //Enemy class contains a constructor and a function for attacking the player,
 //the constructor, variables for if the enemy is alive, 
-//and attacking as well as the positions, the constructor,
+//and attacking as well as the positions, the constructor, and the attack function.
 #pragma once
 class Enemy
 {

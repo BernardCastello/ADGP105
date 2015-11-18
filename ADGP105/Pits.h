@@ -28,4 +28,9 @@ void Pit::PlayerFalls(Player pl)
 	{
 		playerFalls = true;
 	}
+
+	else
+	{
+		playerFalls = false;
+	}
 }
